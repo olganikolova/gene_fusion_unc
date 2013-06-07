@@ -7,6 +7,8 @@
 # Make gene fusion data from unc actionable
 # =======================================
 
+#!/bin/bash
+
 # Step 1: Move all files into one dir per cancer
 d=`pwd`
 mcdir $d/mapped2TCGA_annot
@@ -79,6 +81,13 @@ cd ../
 cd mapped2TCGA_final
 for f in ./*; do
     sed -i 's/~/\t/g' $f
+    sed -i 's/ chr/chr/g' $f
 done
+# add column names from previously created (manually) header file
+for file in *.txt; do cat header $file > tmp; mv tmp $file; done
 cd ../
+
+
+
+
 
