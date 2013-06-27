@@ -56,14 +56,3 @@ lapply(as.list(1:length(files)), function(x){
 		myPlot(files[[x]], popsize[x])
 })
 
-
-
-
-
-text(1:3, par("usr")[3] - 0.25, srt = 45, adj = 1, labels = names, xpd = TRUE)
-
-foo <- plot(x,dd[,2], xlab="Fusions", ylab="% Observations", main=file, xaxt="n" )
-	
-text(1:3, par("usr")[3] - 0.2, labels = names, srt = 45, adj = 1, xpd = TRUE, cex=.9)
-
-mtext(1, text = "X Axis Label", line = 6)
